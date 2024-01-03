@@ -78,6 +78,7 @@ public class PermissionsResolverManager implements PermissionsResolver {
     }
     public void findResolver() {
         if (tryPluginPermissionsResolver()) return;
+        if (tryJPermsPermissions()) return;
         if (tryNijiPermissions()) return;
         if (tryPermissionsEx()) return;
         if (tryDinnerPerms()) return;
@@ -90,6 +91,16 @@ public class PermissionsResolverManager implements PermissionsResolver {
     private boolean tryNijiPermissions() {
         try {
             perms = new NijiPermissionsResolver(server, ignoreNijiPermsBridges);
+            logger.info(name + ": Permissions plugin detected! Using Permissions plugin for permissions.");
+            return true;
+        } catch (Throwable e) {
+            return false;
+        }
+    }
+
+    private boolean tryJPermsPermissions() {
+        try {
+            perms = new JPermsPermissionsResolver(server);
             logger.info(name + ": Permissions plugin detected! Using Permissions plugin for permissions.");
             return true;
         } catch (Throwable e) {
