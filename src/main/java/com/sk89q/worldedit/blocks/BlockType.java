@@ -53,7 +53,7 @@ public enum BlockType {
     SPONGE(BlockID.SPONGE, "Sponge", "sponge"),
     GLASS(BlockID.GLASS, "Glass", "glass"),
     LAPIS_LAZULI_ORE(BlockID.LAPIS_LAZULI_ORE, "Lapis lazuli ore", "lapislazuliore", "blueore", "lapisore"),
-    LAPIS_LAZULI(BlockID.LAPIS_LAZULI_BLOCK, "Lapis lazuli", "lapislazuli", "lapislazuliblock", "bluerock"),
+    LAPIS_LAZULI(BlockID.LAPIS_LAZULI_BLOCK, "Lapis lazuli", "lapislazuli", "lapislazuliblock", "bluerock", "lapisblock"),
     DISPENSER(BlockID.DISPENSER, "Dispenser", "dispenser"),
     SANDSTONE(BlockID.SANDSTONE, "Sandstone", "sandstone"),
     NOTE_BLOCK(BlockID.NOTE_BLOCK, "Note block", "musicblock", "noteblock", "note", "music", "instrument"),
