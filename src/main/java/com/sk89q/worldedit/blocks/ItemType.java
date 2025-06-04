@@ -65,7 +65,7 @@ public enum ItemType {
     PISTON_STICKY_BASE(BlockID.PISTON_STICKY_BASE, "Sticky Piston", "stickypiston"),
     WEB(BlockID.WEB, "Web", "web", "spiderweb"),
     LONG_GRASS(BlockID.LONG_GRASS, "Long grass", "longgrass", "tallgrass"),
-    DEAD_BUSH(BlockID.DEAD_BUSH, "Shrub", "deadbush", "shrub", "deadshrub", "tumbleweed"),
+    DEAD_BUSH(BlockID.DEAD_BUSH, "Shrub", "deadbush", "shrub", "deadshrub", "tumbleweed","bush"),
     PISTON_BASE(BlockID.PISTON_BASE, "Piston", "piston"),
     PISTON_EXTENSION(BlockID.PISTON_EXTENSION, "Piston extension", "pistonextendsion", "pistonhead"),
     CLOTH(BlockID.CLOTH, "Wool", "cloth", "wool"),
