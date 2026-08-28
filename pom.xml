@@ -7,12 +7,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.sk89q</groupId>
   <artifactId>worldedit</artifactId>
-  <version>4.7.3</version>
+  <version>4.8.0</version>
   <name>WorldEdit</name>
   <description>WorldEdit allows for editing the Minecraft SMP world
     en-masse, de-griefing, and fixing issues.</description>
   <properties>
-      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>25</java.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
 <!--  <scm>-->
@@ -22,31 +23,9 @@
 <!--  </scm>-->
 
   <repositories>
-<!--    <repository>-->
-<!--      <id>sk89q-mvn2</id>-->
-<!--      <url>http://mvn2.sk89q.com/repo</url>-->
-<!--    </repository>-->
-    <!-- Repository for resolving release dependencies -->
     <repository>
-      <id>johnymuffin-nexus-releases</id>
+      <id>johnymuffin-nexus</id>
       <url>https://repository.johnymuffin.com/repository/maven-public/</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-    <!-- Repository for resolving snapshot dependencies -->
-    <repository>
-      <id>johnymuffin-nexus-snapshots</id>
-      <url>https://repository.johnymuffin.com/repository/maven-snapshots/</url>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
     </repository>
   </repositories>
 
@@ -67,9 +46,9 @@
 
     <!-- Bukkit -->
     <dependency>
-      <groupId>com.legacyminecraft.poseidon</groupId>
-      <artifactId>poseidon-craftbukkit</artifactId>
-      <version>1.1.8</version>
+      <groupId>com.legacyminecraft</groupId>
+      <artifactId>poseidon-api</artifactId>
+      <version>2.0.0-SNAPSHOT</version>
     </dependency>
 
     <!-- Archive reading library for snapshots -->
@@ -99,6 +78,7 @@
   </dependencies>
 
   <build>
+    <defaultGoal>clean package</defaultGoal>
     <sourceDirectory>${basedir}/src/main/java/</sourceDirectory>
 
     <!-- Resources -->
@@ -127,10 +107,10 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.1</version>
+        <version>3.15.0</version>
         <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
+          <release>${java.version}</release>
+          <encoding>${project.build.sourceEncoding}</encoding>
         </configuration>
       </plugin>
 
@@ -142,7 +122,6 @@
         <configuration>
           <archive>
             <addMavenDescriptor>true</addMavenDescriptor>
-            <pomPropertiesFile>true</pomPropertiesFile>
             <manifest>
               <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
               <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
